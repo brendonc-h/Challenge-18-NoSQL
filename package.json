@@ -1,0 +1,20 @@
+{
+    "name": "social-network-api",
+    "version": "1.0",
+    "description": "Challenge 18 for the University of Denver Coding Bootcamp 2022",
+    "main": "server.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "node server",
+      "dev": "nodemon server",
+      "seed": "node utils/seed"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^6.0.13",
+      "dotenv": "^8.2.0"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.9"
+    }
+  }
