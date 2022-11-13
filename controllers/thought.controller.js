@@ -85,7 +85,7 @@ updateOneThought(req, res) {
   },
 
   // create a reaction
-  createReaction(req, res) {
+  createOneReaction(req, res) {
     Thought.findByIdAndUpdate(
       ObjectId(req.params.thoughtId),
       {
@@ -107,7 +107,7 @@ updateOneThought(req, res) {
   },
 
   // delete a reaction
-  async deleteReaction(req, res) {
+  async deleteOneReaction(req, res) {
     try {
       // Find the thought
       const thought = await Thought.findById(ObjectId(req.params.thoughtId));

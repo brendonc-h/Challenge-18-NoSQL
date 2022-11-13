@@ -17,7 +17,7 @@ module.exports = {
   },
 
   // Get a one user
-  getSingleUser(req, res) {
+  getOneUser(req, res) {
     User.findById(ObjectId(req.params.userId))
       .populate("thoughts")
       .populate("friends")
@@ -33,14 +33,14 @@ module.exports = {
   },
 
   // create one new user
-  createUser(req, res) {
+  createOneUser(req, res) {
     User.create(req.body)
       .then((user) => res.json(user))
       .catch((err) => res.status(500).json(err));
   },
 
   // Update one user
-  updateUser(req, res) {
+  updateOneUser(req, res) {
     User.findByIdAndUpdate(
       ObjectId(req.params.userId),
       { $set: req.body },
@@ -55,7 +55,7 @@ module.exports = {
   },
 
   // Delete one user and remove their thoughts
-  async deleteUser(req, res) {
+  async deleteOneUser(req, res) {
     try {
       const user = await User.findOneAndRemove({
         _id: ObjectId(req.params.userId),
@@ -85,7 +85,7 @@ module.exports = {
   },
 
   // create one friend
-  createFriend(req, res) {
+  createOneFriend(req, res) {
     User.findByIdAndUpdate(
       ObjectId(req.params.userId),
       { $addToSet: { friends: ObjectId(req.params.friendId) } },
@@ -100,7 +100,7 @@ module.exports = {
   },
 
   // delete one friend
-  deleteFriend(req, res) {
+  deleteOneFriend(req, res) {
     User.findByIdAndUpdate(
       ObjectId(req.params.userId),
       {

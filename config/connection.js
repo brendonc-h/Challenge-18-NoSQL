@@ -1,4 +1,4 @@
-const { connect, connection } = require('mongoose');
+const { connect, connection } = require("mongoose");
 require("dotenv").config();
 
 //so that node will use this enviroment instead of just local server
