@@ -64,16 +64,7 @@ module.exports = {
       if (user) {
         // Delete all thoughts from user
         const thoughts = await Thought.deleteMany({ username: user.username });
-        // console.log(thoughts);
-
-        // // Delete all references in other user's friend array
-        // const friends = await User.updateMany(
-        //   {},
-        //   {
-        //     $pull: { friends: req.params.userId },
-        //   }
-        // );
-        // //console.log(friends);
+         console.log(thoughts);
       } else {
         res.status(404).json({ message: "No such user exists" });
       }
