@@ -9,11 +9,11 @@ const {
     createOneFriend,
     deleteOneFriend,
 
-} = require("../../controllers/user.controller");
+} = require("../../controllers/user-controller");
 
 //user api
-router.route("/").get(getUsers);
-router.route("/").post(createOneUser);
+router.route("/").get(getUsers).post(createOneUser)
+
 
 router.route("/:userId").get(getOneUser);
 router.route("/;userId").put(updateOneUser);

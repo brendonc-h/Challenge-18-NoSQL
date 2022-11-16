@@ -5,8 +5,7 @@ module.exports = {
   // Getting all users
   getUsers(req, res) {
     User.find()
-      .populate("thoughts")
-      .populate("friends")
+      .select("-__v")
       .then(async (users) => {
         return res.json(users);
       })

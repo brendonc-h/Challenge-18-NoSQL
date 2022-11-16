@@ -65,4 +65,4 @@ const userNames = [
   };
   
   // Export the functions for use in seed.js
-  module.exports = { getRandomUser, generateThoughts };
+module.exports = { getRandomUser, generateThoughts };
